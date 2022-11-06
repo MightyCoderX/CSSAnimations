@@ -85,7 +85,7 @@ a
     -webkit-text-fill-color: transparent;
 }
 
-.projects
+.animations
 {
     display: grid;
     width: max-content;
@@ -93,7 +93,7 @@ a
     list-style: none;
 }
 
-.projects li
+.animations li
 {
     width: 200px;
     height: 100px;
@@ -106,7 +106,7 @@ a
     -webkit-background-clip: padding-box;
 }
 
-.projects li::before
+.animations li::before
 {
     content: '';
     position: absolute;
@@ -118,14 +118,14 @@ a
     transition: 0.3s ease;
 }
 
-.projects li:hover::before
+.animations li:hover::before
 {
     inset: 0.2rem;
     transition-duration: 0.1s;
     background-color: #050505dd;
 }
 
-/* .projects li::after
+/* .animations li::after
 {
     content: '';
     position: absolute;
@@ -152,7 +152,7 @@ a
     border-radius: 1rem;
 } */
 
-.projects li a
+.animations li a
 {
     display: flex;
     align-items: center;
@@ -160,4 +160,5 @@ a
     width: 100%;
     height: 100%;
     font-weight: 400;
+    user-select: none;
 }
