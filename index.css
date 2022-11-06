@@ -75,7 +75,9 @@ a
 
 .title
 {
+    text-align: center;
     width: max-content;
+    max-width: 100%;
     margin: 0 auto;
     margin-bottom: 1.5em;
     background-clip: text;
