@@ -3,11 +3,11 @@ const pages =
     {
         name: 'home',
         path: '/',
-        index: 'home/'
+        index: './home/'
     },
     {
         name: 'kamehameha',
-        index: 'animations/kamehameha/'
+        index: './animations/kamehameha/'
     }
 ];
 
@@ -15,13 +15,14 @@ const currentState =
 {
     get path()
     {
-        return location.pathname + location.hash.slice(2);
+        return '/' + location.hash.slice(2);
     },
     get page()
     {
         return pages.filter(p =>
         {
             const pagePath = p.path ?? `/${p.name}`;
+
             return pagePath === this.path;
         })[0];
     }
@@ -67,7 +68,7 @@ function loadPage(doc)
     document.title = doc.title ? doc.title + ' - CSS Animations' : 'CSS Animations';
 
     const pageStyleLink = doc.querySelector('head link[rel="stylesheet"]');
-    pageStyleLink.setAttribute('href', `pages/${currentState.page.index}/index.css`)
+    pageStyleLink.setAttribute('href', `./pages/${currentState.page.index}/index.css`)
     document.head.appendChild(pageStyleLink);
     
     const main = document.querySelector('main');
@@ -78,7 +79,7 @@ function loadPage(doc)
 
 function getPageIndex(path)
 {
-    return `pages/${currentState.page.index}index.html`;
+    return `./pages/${currentState.page.index}index.html`;
 }
 
 window.addEventListener('DOMContentLoaded', load);
