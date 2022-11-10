@@ -1,11 +1,3 @@
-*,
-*::before,
-*::after
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 :root
 {
@@ -16,13 +8,6 @@
             #99fdff, var(--color) 30%, 
             transparent 50%
         );
-}
-
-html, body
-{
-    background-color: #000;
-    width: 100vw;
-    height: 100vh;
 }
 
 .kamehameha
