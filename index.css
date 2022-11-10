@@ -105,5 +105,5 @@ main
 .load-spinner
 {
     position: absolute;
-    
+    top: 0;
 }

@@ -60,20 +60,19 @@ async function pathUpdate()
 }
 
 /**
- * 
  * @param {Document} doc 
  */
 function loadPage(doc)
 {
     document.title = doc.title ? doc.title + ' - CSS Animations' : 'CSS Animations';
-    
-    const main = document.querySelector('main');
-
-    main.innerHTML = doc.body.innerHTML;
 
     const pageStyleLink = doc.querySelector('head link[rel="stylesheet"]');
     pageStyleLink.setAttribute('href', `pages/${currentState.page.index}/index.css`)
     document.head.appendChild(pageStyleLink);
+    
+    const main = document.querySelector('main');
+
+    main.innerHTML = doc.body.innerHTML;
 
 }
 
