@@ -29,7 +29,7 @@ const currentState =
 
 function navigate(path)
 {
-    history.pushState(null, null, path);
+    history.pushState(null, null, '.' + path);
     pathUpdate();
 }
 
