@@ -27,12 +27,12 @@
     inset: -2px;
     border-radius: inherit;
     z-index: -1;
-    transition: 0.4s ease;
+    transition: 0.2s ease;
 }
 
 .animations li:hover::before
 {
-    inset: 0.15rem;
+    inset: 0.1rem;
     transition-duration: 0.1s;
     background-color: #111111dd;
 }
