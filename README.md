@@ -1,3 +1,3 @@
 # CSSAnimations
 
-Fun and random CSS animations
+A bunch of fun CSS animations!
