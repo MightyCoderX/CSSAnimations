@@ -12,7 +12,7 @@ html, body
 {
     background-color: #000;
     color: white;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
 }
 
@@ -89,16 +89,18 @@ header
 .logo
 {
     text-align: center;
-    width: max-content;
+    max-width: 100%;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     user-select: none;
+    font-size: clamp(5vmin, 2.5rem, 8vmin);
+    
 }
 
 main
 {
-    padding: 2rem;
+    padding: 1.5rem;
     height: 100%;
 }
 
