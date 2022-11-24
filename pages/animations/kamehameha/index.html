@@ -2,7 +2,25 @@
 
 <link rel="stylesheet" href="index.css">
 
-<div class="kamehameha">
+<script>
+    alert('kamehameha');
+    function restartAnim()
+    {
+        [...this.children]
+        .map(c => c.getAnimations()).flat().forEach(anim =>
+        {
+            anim.finish();
+            anim.play();
+        });
+    }
+</script>
+
+<div class="kamehameha" onclick="[...this.children]
+.map(c => c.getAnimations()).flat().forEach(anim =>
+{
+    anim.finish();
+    anim.play();
+});">
     <div class="source"></div>
     <div class="beam"></div>
     <div class="end"></div>

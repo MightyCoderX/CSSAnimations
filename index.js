@@ -51,12 +51,12 @@ async function pathUpdate()
 
     console.log({ path });
 
-    const pageHtml = await (await fetch(getPageIndex(path))).text();
+    const pageHtml = await (await fetch(getPageIndex())).text();
 
     const domParser = new DOMParser();
-
+    
     const pageDocument = domParser.parseFromString(pageHtml, 'text/html');
-
+    
     loadPage(pageDocument);
 }
 
@@ -69,15 +69,27 @@ function loadPage(doc)
 
     const pageStyleLink = doc.querySelector('head link[rel="stylesheet"]');
     pageStyleLink.setAttribute('href', `./pages/${currentState.page.index}/index.css`)
-    document.head.appendChild(pageStyleLink);
-    
+    document.head.querySelector('link[rel="stylesheet"]:last-of-type').insertAdjacentElement('afterend', pageStyleLink);
+
+    const scripts = doc.querySelectorAll('head script');
+    scripts.forEach(script =>
+    {
+        // if(script.src)
+        // {
+        //     const src = `./pages${(new URL(script.src)).pathname}`;
+        //     console.log(script.src, src);
+        // }
+        // console.log(script.textContent);
+        document.head.querySelector('script:last-of-type').insertAdjacentElement('afterend', script);
+    });
+
     const main = document.querySelector('main');
 
     main.innerHTML = doc.body.innerHTML;
 
 }
 
-function getPageIndex(path)
+function getPageIndex()
 {
     return `./pages/${currentState.page.index}index.html`;
 }
