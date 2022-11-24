@@ -84,7 +84,7 @@
 {
     from
     {
-        right: 80%;
+        right: 96vw;
     }
 
     to
@@ -97,11 +97,11 @@
 {
     0%
     {
-        right: 70%;
+        left: 10vw;
     }
 
     100%
     {
-        right: -10px;
+        left: calc(100vw - 140px);
     }
 }
